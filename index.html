@@ -65,6 +65,31 @@
             margin-bottom: 1.5rem;
         }
 
+        /* 교육 분야 태그 스타일 */
+        .education-fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .field-tag {
+            background: var(--tag-bg-color);
+            color: var(--tag-text-color);
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #ffccbc;
+            transition: all 0.3s;
+        }
+
+        .field-tag:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: translateY(-3px);
+        }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,7 +107,6 @@
         .card p { margin: 0.5rem 0; font-size: 0.95rem; }
         .card .date { color: var(--accent-color); font-weight: bold; font-size: 0.85rem; }
 
-        /* SNS 링크 스타일 개선 */
         .social-links {
             margin-top: 1.5rem;
         }
@@ -103,7 +127,7 @@
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1rem;
         }
 
@@ -140,9 +164,7 @@
             transition: background 0.3s;
         }
 
-        .btn:hover {
-            background: #d35400;
-        }
+        .btn:hover { background: #d35400; }
     </style>
 </head>
 <body>
@@ -161,6 +183,21 @@
 </header>
 
 <div class="container">
+    <section>
+        <h2>주요 교육 분야</h2>
+        <div class="education-fields">
+            <span class="field-tag">AutoCAD 교육</span>
+            <span class="field-tag">Inventor 교육</span>
+            <span class="field-tag">Fusion 교육</span>
+            <span class="field-tag">CATIA 교육</span>
+            <span class="field-tag">3D 프린팅 교육</span>
+            <span class="field-tag">아두이노 교육</span>
+            <span class="field-tag">메이커 교육</span>
+            <span class="field-tag">메이커 장비 교육</span>
+            <span class="field-tag">시제품 제작</span>
+        </div>
+    </section>
+
     <section>
         <h2>전문 교수 및 교육 경력</h2>
         <div class="grid">
@@ -188,7 +225,7 @@
     </section>
 
     <section>
-        <h2>산업체 및 맞춤형 교육 경력</h2>
+        <h2>산업체 경력</h2>
         <div class="grid">
             <div class="card">
                 <span class="date">2010 ~ 현재</span>
@@ -212,9 +249,11 @@
         <h2>프로젝트 갤러리</h2>
         <div class="gallery">
             <div class="gallery-item"><video controls><source src="20260114_152216.mp4" type="video/mp4"></video></div>
-            <div class="gallery-item"><img src="20250617_125401.jpg" alt="프로젝트 이미지 1"></div>
-            <div class="gallery-item"><img src="20250418_142105.jpg" alt="프로젝트 이미지 2"></div>
-            <div class="gallery-item"><img src="20250301_180725.jpg" alt="프로젝트 이미지 3"></div>
+            <div class="gallery-item"><img src="20250617_125401.jpg" alt="프로젝트"></div>
+            <div class="gallery-item"><img src="20250418_142105.jpg" alt="프로젝트"></div>
+            <div class="gallery-item"><img src="20250301_180725.jpg" alt="프로젝트"></div>
+            <div class="gallery-item"><img src="20250408_141416.jpg" alt="프로젝트"></div>
+            <div class="gallery-item"><img src="20231102_135200.jpg" alt="프로젝트"></div>
         </div>
     </section>
 
