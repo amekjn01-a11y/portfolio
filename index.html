@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지년 강사 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root { --primary: #34495e; --accent: #e67e22; --bg: #fdfcf5; }
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: var(--bg); color: #333; margin: 0; line-height: 1.6; }
+        header { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; border-bottom: 5px solid var(--accent); }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
+        section { background: white; padding: 2rem; margin-bottom: 2rem; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { border-left: 5px solid var(--accent); padding-left: 10px; color: var(--primary); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+        .card { padding: 1.2rem; border-radius: 10px; background: #fffaf5; border: 1px solid #ffe0b2; }
+        .date { color: var(--accent); font-weight: bold; font-size: 0.9rem; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+        .gallery img, .gallery video { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; background: #eee; }
+        .contact { text-align: center; padding: 2rem; background: var(--primary); color: white; border-radius: 15px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>김지년 (Kim Ji-nyeon)</h1>
+    <p>기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
+    <p>경북대학교 수송기계공학 학사 [cite: 3]</p>
+</header>
+
+<div class="container">
+    <section>
+        <h2>전문 경력 (Experience)</h2>
+        <div class="grid">
+            <div class="card"><span class="date">2011.01 ~ 현재</span><h3>S.park 대표</h3><p>제품개발 및 설계 [cite: 3]</p></div>
+            <div class="card"><span class="date">2022.08 ~ 2024.02</span><h3>㈜엘라인 교육팀</h3><p>매니저 / 교육 운영 [cite: 3]</p></div>
+            <div class="card"><span class="date">2006.12 ~ 2009.</span><h3>㈜명진 디렉터</h3><p>프레스금형설계 [cite: 4]</p></div>
+            <div class="card"><span class="date">2004.02 ~ 2006.11</span><h3>㈜아이데코 과장</h3><p>금형설계 및 고속가공 [cite: 3]</p></div>
+        </div>
+    </section>
+
+    <section>
+        <h2>교육 및 강의 활동</h2>
+        <ul>
+            <li>경북보건대학교 캡스톤디자인 겸임교수 (34시간) [cite: 3]</li>
+            <li>영남대학교 소형전기차 제작수업 (36시간) [cite: 3]</li>
+            <li>금오공업대학교 기계설계 자격증 특강 (40시간) [cite: 3]</li>
+            <li>거창승강기고등학교 카티아 국제자격증반 특강 [cite: 3]</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>프로젝트 갤러리</h2>
+        <div class="gallery">
+            <video controls><source src="20260114_152216.mp4" type="video/mp4"></video>
+            <img src="20250617_125401.jpg" alt="거리측정 센서">
+            <img src="20250418_142105.jpg" alt="그리퍼">
+            <img src="20250301_180725.jpg" alt="로봇암">
+            <img src="20250408_141416.jpg" alt="메카넘카">
+            <img src="20231102_135200.jpg" alt="로봇">
+            <img src="20230818_134048.jpg" alt="프레임">
+            <img src="20230428_143546.jpg" alt="초음파로봇">
+        </div>
+    </section>
+
+    <div class="contact">
+        <p>Email: amekjn@naver.com | Phone: 010.2507.1567 [cite: 3]</p>
+    </div>
+</div>
+
+</body>
+</html>
