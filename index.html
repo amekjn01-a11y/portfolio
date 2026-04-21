@@ -41,7 +41,7 @@
             object-fit: cover;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             margin-bottom: 1.5rem;
-            background-color: #ddd; /* 사진 없을 때 대비 */
+            background-color: #ddd;
         }
 
         .container {
@@ -82,12 +82,23 @@
         .card p { margin: 0.5rem 0; font-size: 0.95rem; }
         .card .date { color: var(--accent-color); font-weight: bold; font-size: 0.85rem; }
 
-        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
-        th { background: #fafafa; }
+        /* SNS 링크 스타일 개선 */
+        .social-links {
+            margin-top: 1.5rem;
+        }
 
         .social-links a {
-            color: white; font-size: 1.8rem; margin: 0 10px; text-decoration: none; opacity: 0.8;
+            color: white;
+            font-size: 2.2rem;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: var(--accent-color);
+            transform: translateY(-5px);
         }
 
         .gallery {
@@ -97,21 +108,40 @@
         }
 
         .gallery-item {
-            background: #eee; border-radius: 8px; overflow: hidden; height: 200px;
+            background: #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
         }
 
         .gallery-item img, .gallery-item video {
-            width: 100%; height: 100%; object-fit: cover;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .contact-section {
-            text-align: center; padding: 3rem; background: var(--primary-color);
-            color: white; border-radius: 15px;
+            text-align: center;
+            padding: 3.5rem;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
         }
 
         .btn {
-            background: var(--accent-color); color: white; padding: 12px 30px;
-            border-radius: 30px; text-decoration: none; font-weight: bold;
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #d35400;
         }
     </style>
 </head>
@@ -121,11 +151,12 @@
     <img src="profile.jpg" alt="김지년 강사님" class="profile-img" onerror="this.src='https://via.placeholder.com/150?text=Profile'">
     <h1>김지년 (Kim Ji-nyeon)</h1>
     <p>기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
+    
     <div class="social-links">
-        <a href="https://blog.naver.com/amekjn" target="_blank"><i class="fa-solid fa-b"></i></a>
-        <a href="https://www.youtube.com/@spark7089" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-        <a href="https://www.instagram.com/sanimam.jn/?hl=ko" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/gimjinyeon.679305/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://blog.naver.com/amekjn" target="_blank" title="네이버 블로그"><i class="fa-solid fa-square-b"></i></a>
+        <a href="https://www.youtube.com/@spark7089" target="_blank" title="유튜브"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/sanimam.jn/?hl=ko" target="_blank" title="인스타그램"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/gimjinyeon.679305/" target="_blank" title="페이스북"><i class="fa-brands fa-facebook"></i></a>
     </div>
 </header>
 
@@ -141,7 +172,7 @@
             <div class="card">
                 <span class="date">현재</span>
                 <h3>경북보건대학교</h3>
-                <p>캡스톤디자인 겸임교수</p> [cite: 1]
+                <p>캡스톤디자인 겸임교수</p>
             </div>
             <div class="card">
                 <span class="date">2017 ~ 현재</span>
@@ -162,7 +193,7 @@
             <div class="card">
                 <span class="date">2010 ~ 현재</span>
                 <h3>에스파크 (S.park)</h3>
-                <p>대표 / 시제품제작 및 금형설계</p> [cite: 1]
+                <p>대표 / 시제품제작 및 금형설계</p>
             </div>
             <div class="card">
                 <span class="date">2022 ~ 현재</span>
@@ -172,7 +203,7 @@
             <div class="card">
                 <span class="date">2022.08 ~ 2024.02</span>
                 <h3>㈜엘라인 교육팀</h3>
-                <p>매니저 / 교육 기획 및 운영</p> [cite: 1]
+                <p>매니저 / 교육 기획 및 운영</p>
             </div>
         </div>
     </section>
@@ -181,20 +212,17 @@
         <h2>프로젝트 갤러리</h2>
         <div class="gallery">
             <div class="gallery-item"><video controls><source src="20260114_152216.mp4" type="video/mp4"></video></div>
-            <div class="gallery-item"><img src="20250617_125401.jpg"></div>
-            <div class="gallery-item"><img src="20250418_142105.jpg"></div>
-            <div class="gallery-item"><img src="20250301_180725.jpg"></div>
+            <div class="gallery-item"><img src="20250617_125401.jpg" alt="프로젝트 이미지 1"></div>
+            <div class="gallery-item"><img src="20250418_142105.jpg" alt="프로젝트 이미지 2"></div>
+            <div class="gallery-item"><img src="20250301_180725.jpg" alt="프로젝트 이미지 3"></div>
         </div>
     </section>
 
     <div class="contact-section">
-        <a href="mailto:amekjn@naver.com" class="btn">강의 및 프로젝트 문의</a>
-        <p style="margin-top:1.5rem;">amekjn@naver.com | 010-2507-1567</p>
+        <a href="mailto:amekjn@naver.com" class="btn">강의 및 프로젝트 문의하기</a>
+        <p style="margin-top:2rem; opacity: 0.9;">amekjn@naver.com | 010-2507-1567</p>
     </div>
 </div>
 
-<script>
-    // 페이지 로딩 후 추가적인 효과가 필요하면 여기에 작성
-</script>
 </body>
 </html>
