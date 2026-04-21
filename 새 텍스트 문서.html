@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김지년 강사 포트폴리오</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --accent-color: #e67e22;
+            --bg-color: #fdfcf5;
+            --card-bg-color: #ffffff;
+            --text-color: #333;
+            --tag-bg-color: #fbe9e7;
+            --tag-text-color: #d84315;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--accent-color);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            margin-bottom: 1.5rem;
+            background-color: #ddd; /* 사진 없을 때 대비 */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: var(--card-bg-color);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 6px solid var(--accent-color);
+            padding-left: 1rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            padding: 1.5rem;
+            border-radius: 10px;
+            background: #fffaf5;
+            border: 1px solid #ffe0b2;
+        }
+
+        .card h3 { margin-top: 0; color: var(--primary-color); font-size: 1.1rem; }
+        .card p { margin: 0.5rem 0; font-size: 0.95rem; }
+        .card .date { color: var(--accent-color); font-weight: bold; font-size: 0.85rem; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        th, td { padding: 12px; border-bottom: 1px solid #eee; text-align: left; }
+        th { background: #fafafa; }
+
+        .social-links a {
+            color: white; font-size: 1.8rem; margin: 0 10px; text-decoration: none; opacity: 0.8;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            background: #eee; border-radius: 8px; overflow: hidden; height: 200px;
+        }
+
+        .gallery-item img, .gallery-item video {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+
+        .contact-section {
+            text-align: center; padding: 3rem; background: var(--primary-color);
+            color: white; border-radius: 15px;
+        }
+
+        .btn {
+            background: var(--accent-color); color: white; padding: 12px 30px;
+            border-radius: 30px; text-decoration: none; font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="profile.jpg" alt="김지년 강사님" class="profile-img" onerror="this.src='https://via.placeholder.com/150?text=Profile'">
+    <h1>김지년 (Kim Ji-nyeon)</h1>
+    <p>기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
+    <div class="social-links">
+        <a href="https://blog.naver.com/amekjn" target="_blank"><i class="fa-solid fa-b"></i></a>
+        <a href="https://www.youtube.com/@spark7089" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/sanimam.jn/?hl=ko" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/gimjinyeon.679305/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+</header>
+
+<div class="container">
+    <section>
+        <h2>전문 교수 및 교육 경력</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="date">현재</span>
+                <h3>청주대학교</h3>
+                <p>3D프린팅창업 겸임교수</p>
+            </div>
+            <div class="card">
+                <span class="date">현재</span>
+                <h3>경북보건대학교</h3>
+                <p>캡스톤디자인 겸임교수</p> [cite: 1]
+            </div>
+            <div class="card">
+                <span class="date">2017 ~ 현재</span>
+                <h3>NCS 기계설계 강사</h3>
+                <p>국가직무능력표준 기반 기계설계 교육</p>
+            </div>
+            <div class="card">
+                <span class="date">2017 ~ 현재</span>
+                <h3>구미전자공업고등학교</h3>
+                <p>RnDE 강사</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>산업체 및 맞춤형 교육 경력</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="date">2010 ~ 현재</span>
+                <h3>에스파크 (S.park)</h3>
+                <p>대표 / 시제품제작 및 금형설계</p> [cite: 1]
+            </div>
+            <div class="card">
+                <span class="date">2022 ~ 현재</span>
+                <h3>구미전자정보기술원</h3>
+                <p>창업자 맞춤교육 및 메이커장비교육</p>
+            </div>
+            <div class="card">
+                <span class="date">2022.08 ~ 2024.02</span>
+                <h3>㈜엘라인 교육팀</h3>
+                <p>매니저 / 교육 기획 및 운영</p> [cite: 1]
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>프로젝트 갤러리</h2>
+        <div class="gallery">
+            <div class="gallery-item"><video controls><source src="20260114_152216.mp4" type="video/mp4"></video></div>
+            <div class="gallery-item"><img src="20250617_125401.jpg"></div>
+            <div class="gallery-item"><img src="20250418_142105.jpg"></div>
+            <div class="gallery-item"><img src="20250301_180725.jpg"></div>
+        </div>
+    </section>
+
+    <div class="contact-section">
+        <a href="mailto:amekjn@naver.com" class="btn">강의 및 프로젝트 문의</a>
+        <p style="margin-top:1.5rem;">amekjn@naver.com | 010-2507-1567</p>
+    </div>
+</div>
+
+<script>
+    // 페이지 로딩 후 추가적인 효과가 필요하면 여기에 작성
+</script>
+</body>
+</html>
