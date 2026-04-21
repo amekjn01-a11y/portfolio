@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #34495e;
+            --primary-color: #2c3e50;
             --accent-color: #e67e22;
-            --bg-color: #fdfcf5;
+            --bg-color: #f8f9fa;
             --card-bg-color: #ffffff;
             --text-color: #333;
-            --tag-bg-color: #fbe9e7;
-            --tag-text-color: #d84315;
         }
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
-            line-height: 1.7;
+            line-height: 1.6;
             margin: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
@@ -34,14 +32,13 @@
         }
 
         .profile-img {
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
-            border: 5px solid white;
+            border: 4px solid white;
             object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             margin-bottom: 1.5rem;
-            background-color: #ddd;
+            background-color: #eee;
         }
 
         .container {
@@ -52,90 +49,75 @@
 
         section {
             background: var(--card-bg-color);
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         h2 {
-            border-left: 6px solid var(--accent-color);
-            padding-left: 1rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 15px;
             color: var(--primary-color);
             margin-bottom: 1.5rem;
         }
 
-        /* 주요 교육 분야 태그 스타일 */
         .education-fields {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-top: 1rem;
         }
 
         .field-tag {
-            background: var(--tag-bg-color);
-            color: var(--tag-text-color);
-            padding: 8px 18px;
-            border-radius: 25px;
+            background: #fff3e0;
+            color: #e65100;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 500;
-            font-size: 0.95rem;
-            border: 1px solid #ffccbc;
-            transition: all 0.3s;
-        }
-
-        .field-tag:hover {
-            background: var(--accent-color);
-            color: white;
-            transform: translateY(-3px);
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
         }
 
         .card {
-            padding: 1.5rem;
-            border-radius: 10px;
-            background: #fffaf5;
-            border: 1px solid #ffe0b2;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .card h3 { margin-top: 0; color: var(--primary-color); font-size: 1.1rem; }
-        .card p { margin: 0.5rem 0; font-size: 0.95rem; }
-        .card .date { color: var(--accent-color); font-weight: bold; font-size: 0.85rem; }
+        .card:last-child { border-bottom: none; }
 
-        .social-links {
-            margin-top: 1.5rem;
-        }
+        .card h3 { margin: 0 0 0.5rem 0; color: var(--primary-color); font-size: 1.1rem; }
+        .card .date { color: var(--accent-color); font-size: 0.85rem; font-weight: bold; }
+        .card p { margin: 0.3rem 0; color: #666; font-size: 0.95rem; }
 
+        .social-links { margin-top: 1.5rem; }
         .social-links a {
             color: white;
-            font-size: 2.2rem;
-            margin: 0 15px;
+            font-size: 2rem;
+            margin: 0 12px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: transform 0.3s;
             display: inline-block;
         }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-            transform: translateY(-5px);
-        }
+        .social-links a:hover { transform: translateY(-5px); color: var(--accent-color); }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
         }
 
         .gallery-item {
+            width: 100%;
+            height: 200px;
             background: #eee;
             border-radius: 8px;
             overflow: hidden;
-            height: 200px;
         }
 
         .gallery-item img, .gallery-item video {
@@ -144,20 +126,130 @@
             object-fit: cover;
         }
 
-        .contact-section {
+        .footer {
             text-align: center;
-            padding: 3.5rem;
+            padding: 3rem;
             background: var(--primary-color);
             color: white;
-            border-radius: 15px;
-            margin-top: 2rem;
+            border-radius: 12px;
         }
 
         .btn {
             background: var(--accent-color);
             color: white;
-            padding: 15px 40px;
-            border-radius: 35px;
+            padding: 12px 30px;
+            border-radius: 25px;
             text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
             font-weight: bold;
-            font-size:
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://yt3.ggpht.com/ytc/AIdro_m8X0vI-XFvV_Fm_v_p_g=s176-c-k-c0x00ffffff-no-rj" 
+         alt="김지년 강사" class="profile-img" 
+         onerror="this.src='https://yt3.googleusercontent.com/ytc/AIdro_n8I0U0B5qA_k6YxX3h4T3U9C9xX2F5A3h4T3U=s176-c-k-c0x00ffffff-no-rj'">
+    <h1>김지년 (Kim Ji-nyeon)</h1>
+    <p>기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
+    
+    <div class="social-links">
+        <a href="https://blog.naver.com/amekjn" target="_blank" title="네이버 블로그"><i class="fa-solid fa-square-b"></i></a>
+        <a href="https://www.youtube.com/@spark7089" target="_blank" title="유튜브"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/sanimam.jn/?hl=ko" target="_blank" title="인스타그램"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/gimjinyeon.679305/" target="_blank" title="페이스북"><i class="fa-brands fa-facebook"></i></a>
+    </div>
+</header>
+
+<div class="container">
+    <section>
+        <h2>주요 교육 분야</h2>
+        <div class="education-fields">
+            <span class="field-tag">AutoCAD 교육</span>
+            <span class="field-tag">Inventor 교육</span>
+            <span class="field-tag">Fusion 교육</span>
+            <span class="field-tag">CATIA 교육</span>
+            <span class="field-tag">3D 프린팅 교육</span>
+            <span class="field-tag">아두이노 교육</span>
+            <span class="field-tag">메이커 교육</span>
+            <span class="field-tag">메이커 장비 교육</span>
+            <span class="field-tag">시제품 제작</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>주요 경력 및 이력</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="date">2011.01 ~ 현재</span>
+                <h3>에스파크 (S.park)</h3>
+                <p>대표 / 제품개발 및 설계 [cite: 3]</p>
+            </div>
+            <div class="card">
+                <span class="date">현재</span>
+                <h3>청주대학교 / 경북보건대학교</h3>
+                <p>3D프린팅창업 및 캡스톤디자인 겸임교수 [cite: 3]</p>
+            </div>
+            <div class="card">
+                <span class="date">2022.08 ~ 2024.02</span>
+                <h3>㈜엘라인 교육팀</h3>
+                <p>매니저 / 교육 기획 및 운영 [cite: 3]</p>
+            </div>
+            <div class="card">
+                <span class="date">2000.07 ~ 2009.12</span>
+                <h3>㈜명진 / ㈜아이데코 / ㈜삼도휴먼텍</h3>
+                <p>프레스금형설계 및 고속가공 전문가 </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>교육 및 프로젝트 실적</h2>
+        <div class="card">
+            <h3>미래자동차 및 전기차 제작</h3>
+            <p>영남대학교 소형전기차 제작 수업 및 모듈 개발 (총 36시간) [cite: 3]</p>
+        </div>
+        <div class="card">
+            <h3>전문 자격증 과정</h3>
+            <p>금오공과대학교 기계설계 자격증 특강 (총 40시간) [cite: 3]</p>
+            <p>거창승강기고등학교 CATIA 국제자격증반 특강 (총 30시간) [cite: 3]</p>
+        </div>
+        <div class="card">
+            <h3>NCS 및 메이커 교육</h3>
+            <p>구미전자공업고등학교 RnDE 강사 (2017~현재)</p>
+            <p>구미전자정보기술원 메이커 장비 및 창업자 맞춤 교육 (2022~현재)</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>학력</h2>
+        <div class="card">
+            <p><strong>경북대학교</strong> 수송기계공학 학사 / 자동차공학과 졸업 [cite: 3]</p>
+            <p><strong>상산전자공업고등학교</strong> 전자기계과 졸업 [cite: 3]</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>프로젝트 갤러리</h2>
+        <div class="gallery">
+            <div class="gallery-item"><video controls><source src="20260114_152216.mp4" type="video/mp4"></video></div>
+            <div class="gallery-item"><img src="20250301_180725.jpg" alt="로봇 그리퍼"></div>
+            <div class="gallery-item"><img src="20231102_135200.jpg" alt="메카넘휠 로봇"></div>
+            <div class="gallery-item"><img src="20230818_134048.jpg" alt="RC카 프레임"></div>
+            <div class="gallery-item"><img src="20230428_143546.jpg" alt="아두이노 프로젝트"></div>
+            <div class="gallery-item"><img src="20250617_125401.jpg" alt="센서 모듈"></div>
+        </div>
+    </section>
+
+    <div class="footer">
+        <p>강의 및 시제품 제작 문의</p>
+        <h3>010.2507.1567 | amekjn@naver.com</h3>
+        <p>경북 구미시 송선로4길 31-7 에비앙힐스 101호 [cite: 3]</p>
+        <a href="mailto:amekjn@naver.com" class="btn">이메일 보내기</a>
+    </div>
+</div>
+
+</body>
+</html>
