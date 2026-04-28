@@ -78,4 +78,219 @@
             padding: 2.5rem;
             margin-bottom: 3rem;
             border-radius: 20px;
-            box-shadow: 0
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            border-left: 6px solid var(--accent-color);
+            padding-left: 15px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+        h2 i { margin-right: 12px; font-size: 1.3rem; color: var(--accent-color); }
+
+        /* 4. 주요 교육 분야 (태그형 디자인) */
+        .fields-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .field-tag {
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+            border: 1px solid transparent;
+        }
+        .field-tag:hover {
+            background-color: var(--tag-text);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* 5. 경력 및 실적 리스트 */
+        .item-card {
+            padding: 1.5rem;
+            border-radius: 15px;
+            background-color: #f8f9fa; /* 카드 안의 카드 배경색 */
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #dee2e6;
+        }
+        .item-card:last-child { margin-bottom: 0; }
+        .item-card .date { 
+            color: var(--accent-color); 
+            font-weight: 700; 
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .item-card h3 { margin: 0; font-size: 1.2rem; color: var(--primary-color); }
+        .item-card p { margin: 8px 0 0 0; color: #666; }
+
+        /* 6. 프로젝트 갤러리 (이미지 크기 박제) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+        }
+        .gallery-box {
+            width: 100%;
+            aspect-ratio: 16 / 10; /* 모든 사진 비율을 일정하게 고정 */
+            border-radius: 12px;
+            overflow: hidden;
+            background: #eee;
+        }
+        .gallery-box img, .gallery-box video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 이미지가 찌그러지지 않고 꽉 채움 */
+            transition: 0.5s;
+        }
+        .gallery-box:hover img { transform: scale(1.1); }
+
+        /* 7. 연락처 및 푸터 */
+        .contact-footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 25px;
+            margin-top: 2rem;
+        }
+        .contact-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: 0.3s;
+        }
+        .contact-btn:hover { background: #d35400; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+
+        /* 소셜 아이콘 */
+        .social-box { margin-top: 1.5rem; }
+        .social-box a { color: white; font-size: 2rem; margin: 0 15px; opacity: 0.7; transition: 0.3s; }
+        .social-box a:hover { opacity: 1; color: var(--accent-color); }
+
+        /* 모바일 대응 */
+        @media (max-width: 768px) {
+            header { padding: 3rem 1rem; }
+            header h1 { font-size: 2rem; }
+            .slogan-box { font-size: 1rem; padding: 8px 15px; }
+            .slogan-divider { display: none; }
+            .slogan-box span { display: block; margin: 5px 0; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; } /* 모바일은 2줄 정렬 */
+            section { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="profile.jpg" alt="김지년 강사" class="profile-img" onerror="this.src='https://via.placeholder.com/150'">
+    <h1>김지년 (Kim Ji-nyun)</h1>
+    
+    <div class="slogan-box">
+        <span>"현장 중심의 실습 교육"</span>
+        <span class="slogan-divider">|</span>
+        <span>"이론을 넘어선 메이커러닝"</span>
+    </div>
+
+    <p class="expert-sub">기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
+    
+    <div class="social-box">
+        <a href="https://www.instagram.com/sanimam.jn/?hl=ko" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.facebook.com/gimjinyeon.679305/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://blog.naver.com/amekjn" target="_blank"><i class="fa-solid fa-blog"></i></a>
+        <a href="https://www.youtube.com/@spark7089" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+</header>
+
+<div class="container">
+    <section>
+        <h2><i class="fa-solid fa-graduation-cap"></i> 주요 교육 분야</h2>
+        <div class="fields-wrapper">
+            <span class="field-tag">AutoCAD 교육</span>
+            <span class="field-tag">Inventor 교육</span>
+            <span class="field-tag">Fusion 교육</span>
+            <span class="field-tag">CATIA 교육</span>
+            <span class="field-tag">3D 프린팅 교육</span>
+            <span class="field-tag">아두이노 교육</span>
+            <span class="field-tag">메이커 교육</span>
+            <span class="field-tag">메이커 장비 교육</span>
+            <span class="field-tag">시제품 제작</span>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fa-solid fa-briefcase"></i> 주요 경력</h2>
+        <div class="item-card">
+            <span class="date">2011.01 ~ 현재</span>
+            <h3>에스파크 (S.park)</h3>
+            <p>대표 / 제품개발 및 설계</p>
+        </div>
+        <div class="item-card">
+            <span class="date">현재</span>
+            <h3>청주대학교 / 경북보건대학교</h3>
+            <p>3D프린팅창업 및 캡스톤디자인 겸임교수</p>
+        </div>
+        <div class="item-card">
+            <span class="date">2022.08 ~ 2024.02</span>
+            <h3>㈜엘라인 교육팀</h3>
+            <p>매니져 / 교육 기획 및 운영</p>
+        </div>
+        <div class="item-card">
+            <span class="date">2000.07 ~ 2009.12</span>
+            <h3>기계설계 및 고속가공 전문가</h3>
+            <p>㈜명진 / ㈜아이데코 / ㈜삼도휴먼텍 프레스금형설계</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fa-solid fa-list-check"></i> 교육 및 프로젝트 실적</h2>
+        <div class="item-card">
+            <h3>미래자동차 및 전기차 제작 지도</h3>
+            <p>• 영남대, 강원대 소형전기차 제작 수업 및 모듈 개발</p>
+            <p>• 김해생명과학고, 김해건설공업고, 충북에너지고 특강</p>
+        </div>
+        <div class="item-card">
+            <h3>NCS 및 메이커 교육 운영</h3>
+            <p>• 제주과학고등학교 메이커톤 (2박 3일)</p>
+            <p>• 구미전자공업고등학교 RnDE 전담 강사 (2017~현재)</p>
+            <p>• 구미전자정보기술원 창업자 맞춤 교육</p>
+        </div>
+    </section>
+
+    <section>
+        <h2><i class="fa-solid fa-images"></i> 프로젝트 갤러리</h2>
+        <div class="gallery-grid">
+            <div class="gallery-box"><video controls playsinline><source src="20260114_152216.mp4" type="video/mp4"></video></div>
+            <div class="gallery-box"><img src="20250702_154618.jpg" alt="전기자동차"></div>
+            <div class="gallery-box"><img src="20231102_135200.jpg" alt="메카넘휠"></div>
+            <div class="gallery-box"><img src="20230818_134048.jpg" alt="RC카"></div>
+            <div class="gallery-box"><img src="20260410_105509.jpg" alt="아두이노"></div>
+            <div class="gallery-box"><img src="20260121_124321.jpg" alt="조향장치"></div>
+            <div class="gallery-box"><img src="2307.png" alt="Inventor1"></div>
+            <div class="gallery-box"><img src="2603.png" alt="Inventor2"></div>
+        </div>
+    </section>
+
+    <div class="contact-footer">
+        <p>강의 및 시제품 제작 협업 문의</p>
+        <h3>010.2507.1567 | amekjn@naver.com</h3>
+        <p>경북 구미시 형곡동로 37 FM빌딩 B1</p>
+        <a href="mailto:amekjn@naver.com" class="contact-btn">이메일 문의하기</a>
+    </div>
+</div>
+
+</body>
+</html>
