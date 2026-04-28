@@ -8,15 +8,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* 1. 기본 테마 설정 */
         :root {
-            --primary-color: #2c3e50;    /* 진한 남색 - 신뢰감 */
-            --accent-color: #e67e22;     /* 오렌지색 - 포인트 */
-            --bg-body: #f0f2f5;          /* 전체 배경색 */
-            --bg-card: #ffffff;          /* 카드 배경색 */
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-body: #f4f7f6;
+            --bg-card: #ffffff;
             --text-main: #333333;
-            --tag-bg: #e8f0fe;           /* 카테고리 태그 배경색 */
-            --tag-text: #1a73e8;         /* 카테고리 태그 글자색 */
+            --tag-bg: rgba(44, 62, 80, 0.08);
+            --tag-text: #2c3e50;
         }
 
         * { box-sizing: border-box; }
@@ -29,7 +28,7 @@
             word-break: keep-all;
         }
 
-        /* 2. 헤더 디자인 */
+        /* 헤더 디자인 */
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -50,7 +49,6 @@
 
         header h1 { font-size: 2.5rem; margin: 0.5rem 0; font-weight: 700; }
 
-        /* 슬로건 강조 디자인 */
         .slogan-box {
             margin: 1.5rem 0;
             display: inline-block;
@@ -64,21 +62,44 @@
         }
         .slogan-divider { margin: 0 15px; opacity: 0.5; }
 
-        .expert-sub { font-size: 1.1rem; color: #bdc3c7; font-weight: 300; }
-
-        /* 3. 섹션 공통 레이아웃 */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 3rem 1.5rem;
         }
 
+        /* 배경 이미지가 들어가는 섹션 스타일 */
         section {
+            position: relative; /* 배경 배치를 위해 필요 */
             background: var(--bg-card);
             padding: 2.5rem;
             margin-bottom: 3rem;
             border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            overflow: hidden; /* 배경이 삐져나가지 않게 함 */
+            z-index: 1;
+        }
+
+        /* 섹션별 흐린 배경 처리 */
+        section::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.07; /* 매우 흐리게 설정 */
+            filter: grayscale(100%) blur(2px); /* 흑백 및 흐림 처리 */
+            z-index: -1;
+        }
+
+        /* 주요 교육 분야 배경 (강의실/코드 컨셉) */
+        .edu-section::before {
+            background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000');
+        }
+
+        /* 주요 경력 배경 (산업 현장/도면 컨셉) */
+        .career-section::before {
+            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000');
         }
 
         h2 {
@@ -87,12 +108,9 @@
             border-left: 6px solid var(--accent-color);
             padding-left: 15px;
             margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
         }
-        h2 i { margin-right: 12px; font-size: 1.3rem; color: var(--accent-color); }
 
-        /* 4. 주요 교육 분야 (태그형 디자인) */
+        /* 교육 분야 태그 */
         .fields-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -105,43 +123,31 @@
             border-radius: 12px;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: 0.3s;
-            border: 1px solid transparent;
-        }
-        .field-tag:hover {
-            background-color: var(--tag-text);
-            color: white;
-            transform: translateY(-3px);
+            border: 1px solid rgba(44, 62, 80, 0.1);
+            backdrop-filter: blur(5px); /* 배경 이미지 위에서 더 잘 보이게 */
         }
 
-        /* 5. 경력 및 실적 리스트 */
+        /* 경력 카드 */
         .item-card {
             padding: 1.5rem;
             border-radius: 15px;
-            background-color: #f8f9fa; /* 카드 안의 카드 배경색 */
+            background-color: rgba(248, 249, 250, 0.8);
             margin-bottom: 1.5rem;
             border-left: 4px solid #dee2e6;
+            backdrop-filter: blur(5px);
         }
-        .item-card:last-child { margin-bottom: 0; }
-        .item-card .date { 
-            color: var(--accent-color); 
-            font-weight: 700; 
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .item-card h3 { margin: 0; font-size: 1.2rem; color: var(--primary-color); }
-        .item-card p { margin: 8px 0 0 0; color: #666; }
+        .item-card .date { color: var(--accent-color); font-weight: 700; font-size: 0.9rem; }
+        .item-card h3 { margin: 5px 0; color: var(--primary-color); }
 
-        /* 6. 프로젝트 갤러리 (이미지 크기 박제) */
+        /* 갤러리 */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
             gap: 15px;
         }
         .gallery-box {
             width: 100%;
-            aspect-ratio: 16 / 10; /* 모든 사진 비율을 일정하게 고정 */
+            aspect-ratio: 4 / 3;
             border-radius: 12px;
             overflow: hidden;
             background: #eee;
@@ -149,19 +155,16 @@
         .gallery-box img, .gallery-box video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* 이미지가 찌그러지지 않고 꽉 채움 */
-            transition: 0.5s;
+            object-fit: cover;
         }
-        .gallery-box:hover img { transform: scale(1.1); }
 
-        /* 7. 연락처 및 푸터 */
+        /* 연락처 및 푸터 */
         .contact-footer {
             background: var(--primary-color);
             color: white;
             text-align: center;
             padding: 4rem 2rem;
             border-radius: 25px;
-            margin-top: 2rem;
         }
         .contact-btn {
             background: var(--accent-color);
@@ -172,24 +175,17 @@
             font-weight: 700;
             display: inline-block;
             margin-top: 2rem;
-            transition: 0.3s;
         }
-        .contact-btn:hover { background: #d35400; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
 
         /* 소셜 아이콘 */
-        .social-box { margin-top: 1.5rem; }
-        .social-box a { color: white; font-size: 2rem; margin: 0 15px; opacity: 0.7; transition: 0.3s; }
-        .social-box a:hover { opacity: 1; color: var(--accent-color); }
+        .social-box a { color: white; font-size: 1.8rem; margin: 0 15px; opacity: 0.7; }
 
-        /* 모바일 대응 */
         @media (max-width: 768px) {
-            header { padding: 3rem 1rem; }
             header h1 { font-size: 2rem; }
-            .slogan-box { font-size: 1rem; padding: 8px 15px; }
+            .slogan-box { font-size: 1rem; }
             .slogan-divider { display: none; }
             .slogan-box span { display: block; margin: 5px 0; }
-            .gallery-grid { grid-template-columns: 1fr 1fr; } /* 모바일은 2줄 정렬 */
-            section { padding: 1.5rem; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
         }
     </style>
 </head>
@@ -205,7 +201,7 @@
         <span>"이론을 넘어선 메이커러닝"</span>
     </div>
 
-    <p class="expert-sub">기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
+    <p style="color:#bdc3c7;">기계설계 · 로보틱스 · 스마트팩토리 교육 전문가</p>
     
     <div class="social-box">
         <a href="https://www.instagram.com/sanimam.jn/?hl=ko" target="_blank"><i class="fa-brands fa-instagram"></i></a>
@@ -216,7 +212,7 @@
 </header>
 
 <div class="container">
-    <section>
+    <section class="edu-section">
         <h2><i class="fa-solid fa-graduation-cap"></i> 주요 교육 분야</h2>
         <div class="fields-wrapper">
             <span class="field-tag">AutoCAD 교육</span>
@@ -231,7 +227,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="career-section">
         <h2><i class="fa-solid fa-briefcase"></i> 주요 경력</h2>
         <div class="item-card">
             <span class="date">2011.01 ~ 현재</span>
@@ -250,8 +246,8 @@
         </div>
         <div class="item-card">
             <span class="date">2000.07 ~ 2009.12</span>
-            <h3>기계설계 및 고속가공 전문가</h3>
-            <p>㈜명진 / ㈜아이데코 / ㈜삼도휴먼텍 프레스금형설계</p>
+            <h3>프레스금형설계 및 고속가공 전문가</h3>
+            <p>㈜명진 / ㈜아이데코 / ㈜삼도휴먼텍 경력</p>
         </div>
     </section>
 
@@ -264,8 +260,7 @@
         </div>
         <div class="item-card">
             <h3>NCS 및 메이커 교육 운영</h3>
-            <p>• 제주과학고등학교 메이커톤 (2박 3일)</p>
-            <p>• 구미전자공업고등학교 RnDE 전담 강사 (2017~현재)</p>
+            <p>• 제주과학고 메이커톤 / 구미전자공고 RnDE 강사</p>
             <p>• 구미전자정보기술원 창업자 맞춤 교육</p>
         </div>
     </section>
