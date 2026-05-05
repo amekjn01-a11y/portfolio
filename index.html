@@ -28,7 +28,6 @@
             word-break: keep-all;
         }
 
-        /* 헤더 디자인 */
         header {
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
@@ -68,39 +67,30 @@
             padding: 3rem 1.5rem;
         }
 
-        /* 배경 이미지가 들어가는 섹션 스타일 */
         section {
-            position: relative; /* 배경 배치를 위해 필요 */
+            position: relative;
             background: var(--bg-card);
             padding: 2.5rem;
             margin-bottom: 3rem;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            overflow: hidden; /* 배경이 삐져나가지 않게 함 */
+            overflow: hidden;
             z-index: 1;
         }
 
-        /* 섹션별 흐린 배경 처리 */
         section::before {
             content: "";
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background-size: cover;
             background-position: center;
-            opacity: 0.07; /* 매우 흐리게 설정 */
-            filter: grayscale(100%) blur(2px); /* 흑백 및 흐림 처리 */
+            opacity: 0.07;
+            filter: grayscale(100%) blur(2px);
             z-index: -1;
         }
 
-        /* 주요 교육 분야 배경 (강의실/코드 컨셉) */
-        .edu-section::before {
-            background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000');
-        }
-
-        /* 주요 경력 배경 (산업 현장/도면 컨셉) */
-        .career-section::before {
-            background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000');
-        }
+        .edu-section::before { background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1000'); }
+        .career-section::before { background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000'); }
 
         h2 {
             font-size: 1.6rem;
@@ -110,7 +100,35 @@
             margin-bottom: 2rem;
         }
 
-        /* 교육 분야 태그 */
+        /* 자격증 테이블 스타일 추가 */
+        .cert-table-wrapper {
+            overflow-x: auto;
+        }
+        .cert-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(5px);
+        }
+        .cert-table th, .cert-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .cert-table th {
+            background-color: var(--tag-bg);
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .cert-table td {
+            font-size: 0.9rem;
+        }
+        .cert-table tr:hover {
+            background-color: rgba(230, 126, 34, 0.05);
+        }
+
         .fields-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -124,10 +142,9 @@
             font-weight: 600;
             font-size: 0.95rem;
             border: 1px solid rgba(44, 62, 80, 0.1);
-            backdrop-filter: blur(5px); /* 배경 이미지 위에서 더 잘 보이게 */
+            backdrop-filter: blur(5px);
         }
 
-        /* 경력 카드 */
         .item-card {
             padding: 1.5rem;
             border-radius: 15px;
@@ -139,7 +156,6 @@
         .item-card .date { color: var(--accent-color); font-weight: 700; font-size: 0.9rem; }
         .item-card h3 { margin: 5px 0; color: var(--primary-color); }
 
-        /* 갤러리 */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -158,7 +174,6 @@
             object-fit: cover;
         }
 
-        /* 연락처 및 푸터 */
         .contact-footer {
             background: var(--primary-color);
             color: white;
@@ -177,7 +192,6 @@
             margin-top: 2rem;
         }
 
-        /* 소셜 아이콘 */
         .social-box a { color: white; font-size: 1.8rem; margin: 0 15px; opacity: 0.7; }
 
         @media (max-width: 768px) {
@@ -186,6 +200,7 @@
             .slogan-divider { display: none; }
             .slogan-box span { display: block; margin: 5px 0; }
             .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .cert-table th, .cert-table td { padding: 10px 8px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -224,6 +239,32 @@
             <span class="field-tag">메이커 교육</span>
             <span class="field-tag">메이커 장비 교육</span>
             <span class="field-tag">시제품 제작</span>
+        </div>
+    </section>
+
+    <!-- 자격증 섹션 추가 -->
+    <section>
+        <h2><i class="fa-solid fa-id-card"></i> 보유 자격 및 면허</h2>
+        <div class="cert-table-wrapper">
+            <table class="cert-table">
+                <thead>
+                    <tr>
+                        <th>취득년월일</th>
+                        <th>자격·면허명</th>
+                        <th>수여기관</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1995.12.29</td><td>컴퓨터응용선반</td><td>한국산업인력공단</td></tr>
+                    <tr><td>1996.05.20</td><td>컴퓨터응용밀링</td><td>한국산업인력공단</td></tr>
+                    <tr><td>1996.08.05</td><td>전산응용기계제도</td><td>한국산업인력공단</td></tr>
+                    <tr><td>2005.05.04</td><td>AutoCAD 공인강사</td><td>한국ATC센터</td></tr>
+                    <tr><td>2019.02.01</td><td>Inventor 1급</td><td>한국ATC센터</td></tr>
+                    <tr><td>2024.09.02</td><td>3D프린터지도자 1급</td><td>한국평생교육인증원</td></tr>
+                    <tr><td>2024.09.30</td><td>AI프로젝트지도사 1급</td><td>한국직업능력진흥원</td></tr>
+                    <tr><td>2024.09.30</td><td>코딩지도사 1급</td><td>한국직업능력진흥원</td></tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
